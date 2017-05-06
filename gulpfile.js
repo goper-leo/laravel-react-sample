@@ -99,15 +99,6 @@ gulp.task('sass', function () {
  */
 gulp.task('js', function() {
   gutil.log(gutil.colors.blue('Copying required js files >>>'));
-  gulp.src(path.bower('jquery/dist/jquery.min.js'))
-    .pipe(gulp.dest(path.assets('js/vendors')));
-
-  gulp.src(path.bower('bootstrap-sass/assets/javascripts/bootstrap.min.js'))
-    .pipe(gulp.dest(path.assets('js/vendors')));
-
-
-  gulp.src(path.bower('matchHeight/jquery.matchHeight.js'))
-    .pipe(gulp.dest(path.assets('js/vendors')));
 
   gulp.src(path.bower('jquery-ui/jquery-ui.js'))
     .pipe(gulp.dest(path.assets('vendors/jquery-ui')));
@@ -165,11 +156,21 @@ gulp.task('clean:images', function() {
  * with your name and branch
  */
 gulp.task('vendors', function() {
-  gulp.src(path.bower('moment/min/**/*'))
-    .pipe(gulp.dest(path.assets('vendors/moment')));
+    gulp.src(path.bower('jquery/dist/jquery.min.js'))
+      .pipe(gulp.dest(path.assets('vendors')));
 
-  gulp.src(path.bower('moment-timezone/builds/**/*'))
-    .pipe(gulp.dest(path.assets('vendors/moment-timezone')));
+    gulp.src(path.bower('moment/min/**/*'))
+        .pipe(gulp.dest(path.assets('vendors/moment')));
+
+    gulp.src(path.bower('moment-timezone/builds/**/*'))
+        .pipe(gulp.dest(path.assets('vendors/moment-timezone')));
+
+    gulp.src(path.bower('bootstrap-sass/assets/**/*'))
+      .pipe(gulp.dest(path.assets('vendors/bootstrap-sass')));
+
+    gulp.src(path.bower('matchHeight/jquery.matchHeight.js'))
+        .pipe(gulp.dest(path.assets('vendors/matchHeight')));
+
 });
 
 /**
