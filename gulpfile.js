@@ -89,8 +89,6 @@ gulp.task('sass', function () {
     .pipe(sass().on('error', sass.logError))
     .pipe(minifyCSS())
     .pipe(gulp.dest(path.assets('css')));
-
-
 });
 
 /**
@@ -99,6 +97,9 @@ gulp.task('sass', function () {
  */
 gulp.task('js', function() {
   gutil.log(gutil.colors.blue('Copying required js files >>>'));
+
+  gulp.src(path.bower('bootstrap-sass/assets/javascripts/**/*'))
+    .pipe(gulp.dest(path.assets('vendors/bootstrap-sass/assets/javascripts')));
 
   gulp.src(path.bower('jquery-ui/jquery-ui.js'))
     .pipe(gulp.dest(path.assets('vendors/jquery-ui')));
@@ -165,8 +166,8 @@ gulp.task('vendors', function() {
     gulp.src(path.bower('moment-timezone/builds/**/*'))
         .pipe(gulp.dest(path.assets('vendors/moment-timezone')));
 
-    gulp.src(path.bower('bootstrap-sass/assets/**/*'))
-      .pipe(gulp.dest(path.assets('vendors/bootstrap-sass')));
+    gulp.src(path.bower('bootstrap-sass/assets/javascripts/boostrap.min.js'))
+      .pipe(gulp.dest(path.assets('vendors/bootstrap-sass/js')));
 
     gulp.src(path.bower('matchHeight/jquery.matchHeight.js'))
         .pipe(gulp.dest(path.assets('vendors/matchHeight')));
