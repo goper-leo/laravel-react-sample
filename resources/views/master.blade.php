@@ -18,11 +18,14 @@
     </head>
     <body>
 
-      @include('widgets.header')
+      <div class="container-fluid">
+        @include('widgets.header')
 
-      @yield('body')
+        @yield('body')
 
-      @include('widgets.footer')
+        @include('widgets.footer')
+      </div>
+
 
       <script src="/assets/js/bootstrap.min.js"></script>
       <script src="/assets/vendors/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
