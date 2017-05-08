@@ -175,6 +175,8 @@ gulp.task('vendors', function() {
     gulp.src(path.bower('lightslider/dist/**/*'))
         .pipe(gulp.dest(path.assets('vendors/lightslider')));
 
+    gulp.src(path.bower('maplace-js/src/**/*'))
+      .pipe(gulp.dest(path.assets('vendors/maplace-js')));
 });
 
 /**
