@@ -6,7 +6,12 @@
 @endsection
 
 @section('body')
- This is the Body
+
+<div class="row">
+  <div class="col-xs-12">
+    This is the body
+  </div>
+</div>
 @endsection
 
 

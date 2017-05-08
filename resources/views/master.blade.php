@@ -18,13 +18,16 @@
     </head>
     <body>
 
-      <div class="container-fluid">
-        @include('widgets.header')
 
-        @yield('body')
+        @include('widgets.header')
+        <section class="main">
+          <div class="container-fluid">
+            @yield('body')
+          </div>
+        </section>
 
         @include('widgets.footer')
-      </div>
+
 
 
       <script src="/assets/js/bootstrap.min.js"></script>
