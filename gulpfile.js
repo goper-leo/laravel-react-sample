@@ -172,6 +172,9 @@ gulp.task('vendors', function() {
     gulp.src(path.bower('matchHeight/jquery.matchHeight.js'))
         .pipe(gulp.dest(path.assets('vendors/matchHeight')));
 
+    gulp.src(path.bower('lightslider/dist/**/*'))
+        .pipe(gulp.dest(path.assets('vendors/lightslider')));
+
 });
 
 /**
