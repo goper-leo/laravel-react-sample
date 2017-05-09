@@ -12,4 +12,16 @@
     pager: false,
   });
 
+
+    new Maplace({
+        locations: [{
+          lat: 45.9,
+          lon: 10.9,
+          zoom: 8
+        }],
+        controls_on_map: false,
+        map_div: '#google-map',
+    }).Load();
+
+
 })(jQuery);

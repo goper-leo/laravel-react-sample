@@ -9,6 +9,7 @@
 
 <div class="row">
   <div class="col-xs-8">
+    @for ($i=0; $i < 10; $i++)
     <div class="col-xs-6">
       <div class="item">
         <div class="item-image">
@@ -33,6 +34,7 @@
         </div>
       </div>
     </div>
+    @endfor
   </div>
   <div class="col-xs-4">
     @include('widgets.map')
@@ -43,6 +45,8 @@
 
 
 @section('inline_scripts')
+  <script src='https://maps.google.com/maps/api/js?sensor=false&libraries=geometry&v=3.22&key=AIzaSyC6pwEoTVF29E3iuxfazy-LqRTx_4EmIPY'></script>
   <script type="text/javascript" src="/assets/vendors/lightslider/js/lightslider.min.js"></script>
+  <script src="assets/vendors/maplace-js/maplace.js"></script>
   <script type="text/javascript" src="/assets/js/main.min.js"></script>
 @endsection

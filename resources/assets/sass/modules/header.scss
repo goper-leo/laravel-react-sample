@@ -1,4 +1,8 @@
 nav {
+
+  &::after {
+    display: none;
+  }
   .navbar-brand {
     img {
       width: 99px;
@@ -67,6 +71,11 @@ nav {
   }
 
   .third-layer {
+    background-color: $body-bg;
+
+    &::after {
+      display: none;
+    }
     ul {
       li {
         &:hover {
