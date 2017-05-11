@@ -12,5 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('homes');
+    $houses = \App\Models\House::all();
+
+    return view('homes', compact('houses'));
 });

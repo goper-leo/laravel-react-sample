@@ -10,6 +10,9 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="/assets/css/bootstrap.css">
+        <link rel="stylesheet" href="/assets/vendors/easydropdown/easydropdown.css">
+
+
         <link href="/assets/css/app.css" rel="stylesheet" type="text/css">
 
         <script src="/assets/vendors/jquery.min.js"></script>
@@ -17,7 +20,6 @@
         @yield('inline_css')
     </head>
     <body>
-
 
         @include('widgets.header')
         <section class="main">
@@ -28,9 +30,10 @@
 
         @include('widgets.footer')
 
-
-
       <script src="/assets/js/bootstrap.min.js"></script>
+      <script src="/assets/vendors/matchHeight/jquery.matchHeight.js"></script>
+      <script src="/assets/vendors/easydropdown/jquery.easydropdown.js"></script>
+
       <script src="/assets/vendors/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
       @yield('inline_scripts')
 

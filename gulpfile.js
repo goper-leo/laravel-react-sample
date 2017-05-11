@@ -177,6 +177,11 @@ gulp.task('vendors', function() {
 
     gulp.src(path.bower('maplace-js/src/**/*'))
       .pipe(gulp.dest(path.assets('vendors/maplace-js')));
+
+    gulp.src(path.bower('easydropdown/src/**/*'))
+      .pipe(gulp.dest(path.assets('vendors/easydropdown')));
+      gulp.src(path.bower('easydropdown/themes/**/*'))
+        .pipe(gulp.dest(path.assets('vendors/easydropdown')));
 });
 
 /**

@@ -1,4 +1,5 @@
 .item {
+  margin-bottom: 30px;
   .item-image {
     position: relative;
 
@@ -16,6 +17,12 @@
       &:hover {
         cursor: pointer;
       }
+    }
+  }
+
+  .item-details {
+    h4, p {
+      margin-bottom: 0px;
     }
   }
 

@@ -18,6 +18,7 @@
     "matchHeight": "^0.7.2",
     "font-awesome": "^4.7.0",
     "moment": "^2.18.1",
-    "moment-timezone": "^0.5.13"
+    "moment-timezone": "^0.5.13",
+    "easydropdown": "^2.1.4"
   }
 }
