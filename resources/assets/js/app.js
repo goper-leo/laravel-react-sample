@@ -57,20 +57,27 @@
       return locations;
     },
 
+    /**
+     * Remove all locations on the map
+     * @return void
+     */
     removeAllLocations: function() {
-      for (var i = 0; i < 5; i++) {
-        container.find('.item').each(function(index, el) {
-          gmap.RemoveLocations(index);
-        });
-      }
-
-      gmap.Load();
+      var locations = [];
+      // Get all `items` save to array
+      container.find('.item').each(function(index, el) {
+        locations.push(index);
+      });
+      // Remove locations method on `maplace-js`
+      gmap.RemoveLocations(locations);
+      gmap.Load(); // Load to refresh map
     },
   };
 
   var page = {
 
     ini: function() {
+
+      //** Initialize carousel plugin
       $('.item-slider').lightSlider({
         gallery: false,
         item: 1,
@@ -81,31 +88,26 @@
         pager: false,
       });
 
+      //** Initialize matchHeight
       $('.item').matchHeight();
-    },
-
-    createPaginator: function() {
-      paginator_dom.find('li').each(function(index, el) {
-
-      });
     },
   };
 
   page.ini();
   map.ini();
 
+  //** Change map view when hovering on an `item`
   $('body').on('mouseover', '.item', function() {
     var this_index = $(this).data('index');
     gmap.ViewOnMap(this_index + 1);
   });
 
+  //** Footer events
   $('.footer-button').on('click', function() {
-
     $( ".footer" ).slideToggle( "slow" );
   });
 
   $('.close-footer-btn').on('click', function() {
-
     $( ".footer" ).slideToggle( "slow" );
   });
 
@@ -115,29 +117,37 @@
   $('body').on('click', '.pagination a', function(e) {
     e.preventDefault();
 
+    // Show loading state
     loading_dom.show();
 
-    var url = $(this).attr('href');
+    var url = $(this).attr('href'); // Get target url
     $.ajax({
       url : url
     }).done(function (data) {
-
+      // Request is done
+      // First remove all map locations
       map.removeAllLocations();
+
+      // Append houses as `items` on the container
       houser_item_container.html(data.items);
+
+      // Add locations on the map this is the new locations comes from the call
       gmap.AddLocations(map.getAllLocations());
+
       gmap.Load();
       page.ini();
 
+      // Recreate paginator view
       paginator_dom.empty();
       paginator_dom.append(data.paginator);
 
       $("html, body").animate({
             scrollTop: 0
-      }, 500);
+      }, 500); // Scroll to top
 
       loading_dom.hide();
     }).fail(function () {
-      alert('Articles could not be loaded.');
+      alert('Houses could not be loaded.');
     });
 
   });
