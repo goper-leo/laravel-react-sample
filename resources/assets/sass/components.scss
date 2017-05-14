@@ -32,3 +32,21 @@
     }
   }
 }
+
+.loading {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100000;
+  background-color: rgba(0,0,0,0.5);
+  right: 0px;
+  bottom: 0px;
+  text-align: center;
+
+  i {
+    position: absolute;
+    bottom: 202px;
+    color: #ffffff;
+    font-size: 40px;
+  }
+}
